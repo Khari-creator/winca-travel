@@ -14,7 +14,7 @@ export default function CategoryTemplate({ category }: Props) {
     <main className="bg-white text-gray-800">
       <section className="relative overflow-hidden text-white">
         <div className="absolute inset-0">
-          <Image src={meta.heroImage} alt={meta.title} fill className="object-cover" priority />
+          <Image src={meta.heroImage} alt={meta.title} fill className="object-cover" />
           <div className="absolute inset-0 bg-black/55" />
         </div>
 

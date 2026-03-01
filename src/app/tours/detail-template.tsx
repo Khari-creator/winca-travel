@@ -16,7 +16,7 @@ export default function DetailTemplate({ category, slug }: Props) {
   return (
     <main className="bg-white text-gray-800">
       <section className="relative h-[72vh] overflow-hidden">
-        <Image src={tour.heroImage} alt={tour.title} fill className="object-cover" priority />
+        <Image src={tour.heroImage} alt={tour.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-black/55" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">

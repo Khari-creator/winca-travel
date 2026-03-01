@@ -120,7 +120,6 @@ export default async function CountryVisaPage({ params }: PageProps) {
           src={data.heroImage}
           alt={data.name}
           fill
-          priority
           className="object-cover"
         />
 

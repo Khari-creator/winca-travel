@@ -34,7 +34,6 @@ function MainNavbar() {
             alt="WINCA Tours & Travel"
             width={330}
             height={200}
-            priority
             className="h-16 w-auto object-contain"
           />
         </Link>
