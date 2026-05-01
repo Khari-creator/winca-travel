@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
         <article>
           <h2 className="text-2xl font-semibold mb-3">6. Contact for Privacy Requests</h2>
           <p className="text-gray-700 leading-relaxed">
-            For privacy-related questions or data requests, contact us at info@wincatravel.com.
+            For privacy-related questions or data requests, contact us at info@wincatravel.co.ke.
           </p>
         </article>
       </section>

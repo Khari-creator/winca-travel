@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <span className="font-semibold text-gray-900">Phone:</span> +254 743095927
               </p>
               <p>
-                <span className="font-semibold text-gray-900">Email:</span> info@wincatravel.com
+                <span className="font-semibold text-gray-900">Email:</span> info@wincatravel.co.ke
               </p>
               <p>
                 <span className="font-semibold text-gray-900">Office:</span> Hurligham, Nairobi.

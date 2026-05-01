@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" aria-hidden="false" role="img">
+  <title>Winca Travel &amp; Tours</title>
+  <!-- Transparent background - logo uses shapes only -->
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#083a66" />
+      <stop offset="1" stop-color="#0b5a8a" />
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#c79b3a" />
+      <stop offset="1" stop-color="#b67f2b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Stylized 'W' block -->
+  <g transform="translate(20,10)">
+    <path d="M20 160 L70 20 L120 160 L170 20 L220 160 L270 20 L320 160 L380 20 L420 160 L480 20 L520 160"
+          fill="none" stroke="url(#g1)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Mountain inside the W -->
+    <path d="M120 120 L160 60 L200 120 L220 100 L260 60 L300 120"
+          fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+
+    <!-- Swoosh and plane -->
+    <path d="M60 80 C160 60, 320 20, 460 40" fill="none" stroke="url(#g2)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="468,36 480,40 468,44 472,40" fill="#b67f2b" />
+  </g>
+
+  <!-- Wordmark (optional, small) -->
+  <g transform="translate(40,170)">
+    <text x="0" y="0" font-family="Georgia,serif" font-size="24" fill="#083a66">WINCA</text>
+    <text x="130" y="0" font-family="Arial, sans-serif" font-size="12" fill="#b67f2b">TRAVEL &amp; TOURS</text>
+  </g>
+</svg>

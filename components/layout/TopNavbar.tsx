@@ -16,13 +16,13 @@ export default function TopNavbar() {
         {/* Left: Contact Info */}
         <div className="hidden sm:flex items-center gap-6">
           <a
-            href="mailto:info@wincatravel.com"
+            href="mailto:info@wincatravel.co.ke"
             className="flex items-center gap-2 hover:text-accent transition-colors"
             aria-label="Email us"
           >
             <Mail size={14} />
             <span className="whitespace-nowrap">
-              info@wincatravel.com
+              info@wincatravel.co.ke
             </span>
           </a>
 

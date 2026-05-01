@@ -142,10 +142,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-red-500" />
                 <a
-                  href="mailto:info@wincatravel.com"
+                  href="mailto:info@wincatravel.co.ke"
                   className="hover:text-red-500 transition"
                 >
-                  info@wincatravel.com
+                  info@wincatravel.co.ke
                 </a>
               </li>
             </ul>
