@@ -10,6 +10,8 @@ import {
   Instagram,
 } from "lucide-react"
 
+import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO } from '@/lib/company'
+
 export default function Footer() {
   return (
     <footer className="bg-primary text-gray-300 pt-20">
@@ -142,10 +144,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-red-500" />
                 <a
-                  href="mailto:info@wincatravel.co.ke"
+                  href={CONTACT_EMAIL_MAILTO}
                   className="hover:text-red-500 transition"
                 >
-                  info@wincatravel.co.ke
+                  {CONTACT_EMAIL}
                 </a>
               </li>
             </ul>

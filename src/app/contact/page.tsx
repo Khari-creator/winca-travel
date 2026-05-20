@@ -1,3 +1,6 @@
+import ContactForm from './ContactForm'
+import { CONTACT_EMAIL } from '@/lib/company'
+
 export default function ContactPage() {
   return (
     <main className="bg-white text-gray-800">
@@ -15,53 +18,7 @@ export default function ContactPage() {
           <div className="rounded-2xl border bg-white p-6 md:p-8 shadow-sm">
             <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
 
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition"
-              >
-                Submit
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
           <div className="rounded-2xl border bg-white p-6 md:p-8 shadow-sm">
@@ -72,7 +29,7 @@ export default function ContactPage() {
                 <span className="font-semibold text-gray-900">Phone:</span> +254 743095927
               </p>
               <p>
-                <span className="font-semibold text-gray-900">Email:</span> info@wincatravel.co.ke
+                <span className="font-semibold text-gray-900">Email:</span> {CONTACT_EMAIL}
               </p>
               <p>
                 <span className="font-semibold text-gray-900">Office:</span> Hurligham, Nairobi.

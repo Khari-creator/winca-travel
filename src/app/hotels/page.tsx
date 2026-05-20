@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import HotelRequestForm from './HotelRequestForm'
+
 const featuredDestinations = [
   {
     name: 'Thailand',
@@ -104,90 +106,7 @@ export default function HotelsPage() {
               Share your stay requirements and we’ll curate high-fit options with the right price, location, and comfort level.
             </p>
 
-            <form action="/contact" method="get" className="space-y-8">
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Stay Details</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                  <Field label="Destination">
-                    <input name="destination" placeholder="City, country, or hotel area" required className="hotel-input" />
-                  </Field>
-
-                  <Field label="Check-in Date">
-                    <input type="date" name="checkIn" required className="hotel-input" />
-                  </Field>
-
-                  <Field label="Check-out Date">
-                    <input type="date" name="checkOut" required className="hotel-input" />
-                  </Field>
-
-                  <Field label="Number of Rooms">
-                    <select name="rooms" className="hotel-input" defaultValue="1">
-                      <option value="1">1 Room</option>
-                      <option value="2">2 Rooms</option>
-                      <option value="3">3 Rooms</option>
-                      <option value="4">4+ Rooms</option>
-                    </select>
-                  </Field>
-
-                  <Field label="Adults">
-                    <select name="adults" className="hotel-input" defaultValue="2">
-                      <option value="1">1 Adult</option>
-                      <option value="2">2 Adults</option>
-                      <option value="3">3 Adults</option>
-                      <option value="4">4+ Adults</option>
-                    </select>
-                  </Field>
-
-                  <Field label="Children">
-                    <select name="children" className="hotel-input" defaultValue="0">
-                      <option value="0">0 Children</option>
-                      <option value="1">1 Child</option>
-                      <option value="2">2 Children</option>
-                      <option value="3">3+ Children</option>
-                    </select>
-                  </Field>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Accommodation Type</h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {['Budget', 'Standard', '4-Star', '5-Star', 'Apartment', 'Resort', 'Villa'].map((type) => (
-                    <label key={type} className="flex items-center gap-3 rounded-lg border border-gray-200 px-4 py-3 text-sm font-medium">
-                      <input type="checkbox" name="accommodationType" value={type} className="h-4 w-4 rounded border-gray-300 text-red-600" />
-                      {type}
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Preferences</h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {['Breakfast included', 'Near airport', 'City center', 'Sea view', 'Family friendly'].map((pref) => (
-                    <label key={pref} className="flex items-center gap-3 rounded-lg border border-gray-200 px-4 py-3 text-sm font-medium">
-                      <input type="checkbox" name="preferences" value={pref} className="h-4 w-4 rounded border-gray-300 text-red-600" />
-                      {pref}
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-lg font-semibold transition"
-                >
-                  Find My Hotel
-                </button>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center border border-gray-300 hover:border-red-300 px-8 py-3.5 rounded-lg font-semibold transition"
-                >
-                  Request a Quote
-                </Link>
-              </div>
-            </form>
+            <HotelRequestForm />
           </div>
         </div>
       </section>
@@ -297,15 +216,6 @@ export default function HotelsPage() {
         </div>
       </section>
     </main>
-  )
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <label className="block text-sm font-semibold text-gray-700 mb-2">{label}</label>
-      {children}
-    </div>
   )
 }
 

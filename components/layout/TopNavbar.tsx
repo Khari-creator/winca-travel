@@ -8,6 +8,8 @@ import {
   Instagram,
 } from 'lucide-react'
 
+import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO } from '@/lib/company'
+
 export default function TopNavbar() {
   return (
     <div className="w-full bg-primary text-white text-xs">
@@ -16,13 +18,13 @@ export default function TopNavbar() {
         {/* Left: Contact Info */}
         <div className="hidden sm:flex items-center gap-6">
           <a
-            href="mailto:info@wincatravel.co.ke"
+            href={CONTACT_EMAIL_MAILTO}
             className="flex items-center gap-2 hover:text-accent transition-colors"
             aria-label="Email us"
           >
             <Mail size={14} />
             <span className="whitespace-nowrap">
-              info@wincatravel.co.ke
+              {CONTACT_EMAIL}
             </span>
           </a>
 

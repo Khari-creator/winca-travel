@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import ECitizenApplicationForm from './ECitizenApplicationForm'
+
 const services = [
   {
     title: 'Passport Services',
@@ -277,57 +279,9 @@ export default function ECitizenPage() {
             </div>
           </div>
 
-          <form action="/contact" method="get" className="rounded-2xl border bg-gray-50 p-6 md:p-8 space-y-4">
-            <Field label="Full Name">
-              <input name="name" required className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15" />
-            </Field>
-
-            <Field label="Phone Number">
-              <input name="phone" required className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15" />
-            </Field>
-
-            <Field label="Email Address">
-              <input type="email" name="email" className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15" />
-            </Field>
-
-            <Field label="Service Needed">
-              <select name="service" required className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15">
-                <option value="">Select service</option>
-                {services.map((service) => (
-                  <option key={service.title} value={service.title}>
-                    {service.title}
-                  </option>
-                ))}
-              </select>
-            </Field>
-
-            <Field label="Message">
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Tell us your request details and deadlines."
-                className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none focus:border-red-600 focus:ring-3 focus:ring-red-600/15"
-              />
-            </Field>
-
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition"
-            >
-              Submit Request
-            </button>
-          </form>
+          <ECitizenApplicationForm services={services} />
         </div>
       </section>
     </main>
-  )
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="block text-sm font-semibold text-gray-700 mb-2">{label}</span>
-      {children}
-    </label>
   )
 }

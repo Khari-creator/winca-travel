@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getTourByCategoryAndSlug, type TourCategory } from './data'
 
+import TourInquiryForm from './TourInquiryForm'
+
 type Props = {
   category: TourCategory
   slug: string
@@ -122,56 +124,7 @@ export default function DetailTemplate({ category, slug }: Props) {
               <h2 className="text-3xl font-bold mb-3">Tour Inquiry</h2>
               <p className="text-gray-600 mb-8">Send your details and we’ll help you customize this package.</p>
 
-              <form action="/contact" method="get" className="grid md:grid-cols-2 gap-5">
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-semibold mb-2">Selected Tour</label>
-                  <input
-                    name="tour"
-                    defaultValue={tour.title}
-                    readOnly
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 bg-white"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Full Name</label>
-                  <input name="name" required className="w-full rounded-lg border border-gray-200 px-4 py-3" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Email Address</label>
-                  <input type="email" name="email" required className="w-full rounded-lg border border-gray-200 px-4 py-3" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Phone Number</label>
-                  <input name="phone" required className="w-full rounded-lg border border-gray-200 px-4 py-3" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Preferred Travel Date</label>
-                  <input type="date" name="travelDate" required className="w-full rounded-lg border border-gray-200 px-4 py-3" />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-semibold mb-2">Message</label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us your traveler count, preferred hotel level, and budget range."
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition"
-                  >
-                    Send Inquiry
-                  </button>
-                </div>
-              </form>
+              <TourInquiryForm sourcePage={`/tours/${category}/${slug}`} tourTitle={tour.title} />
             </div>
           </div>
 
