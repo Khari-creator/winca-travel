@@ -28,13 +28,13 @@ function MainNavbar() {
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="relative flex h-20 w-32 shrink-0 items-center overflow-hidden sm:w-36 md:w-40">
           <Image
             src="/logo.png"
             alt="WINCA Tours & Travel"
-            width={330}
-            height={200}
-            className="h-16 w-auto object-contain"
+            fill
+            sizes="(max-width: 640px) 8rem, (max-width: 768px) 9rem, 10rem"
+            className="object-contain scale-[1.9] transform-gpu"
           />
         </Link>
 

@@ -26,7 +26,7 @@ const slides = [
       "From vibrant cities to serene islands, enjoy exotic cuisine, temples, beaches, and unforgettable nightlife.",
   },
   {
-    image: "/hero/singapore.jpg",
+    image: "/hero/singapore.webp",
     location: "Singapore",
     headline: "Modern City, Timeless Experiences",
     subtext:
@@ -40,7 +40,7 @@ const slides = [
       "Crystal-clear waters, private resorts, and serene beaches designed for relaxation and romance.",
   },
   {
-    image: "/hero/paris.jpg",
+    image: "/hero/paris.avif",
     location: "Paris, France",
     headline: "Romance, Culture & Timeless Beauty",
     subtext:
