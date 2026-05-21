@@ -5,6 +5,7 @@ import { CalendarDays, Plane, PlaneLanding, PlaneTakeoff, Wallet } from 'lucide-
 
 import InquiryFeedback from '@/components/forms/InquiryFeedback'
 import { useInquirySubmission } from '@/components/forms/useInquirySubmission'
+import { CONTACT_PHONE } from '@/lib/company'
 
 import PassengerSelector from './PassengerSelector'
 import TripTypeSelector, { type TripType } from './TripTypeSelector'
@@ -326,7 +327,7 @@ export default function FlightSearchForm() {
             <input
               value={travelerPhone}
               onChange={(event) => setTravelerPhone(event.target.value)}
-              placeholder="+254 7XX XXX XXX"
+              placeholder={CONTACT_PHONE}
               className={fieldInputClassName}
               required
               disabled={isSubmitting}

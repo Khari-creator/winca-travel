@@ -9,8 +9,27 @@ import {
 } from '@/lib/inquiries'
 import { sendInquiryEmail } from '@/lib/mailer'
 
+const INQUIRY_EMAIL_TIMEOUT_MS = 15000
+
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+async function withTimeout<T>(promise: Promise<T>, timeoutMs: number, timeoutMessage: string) {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined
+
+  try {
+    return await Promise.race([
+      promise,
+      new Promise<never>((_, reject) => {
+        timeoutId = setTimeout(() => reject(new Error(timeoutMessage)), timeoutMs)
+      }),
+    ])
+  } finally {
+    if (timeoutId) {
+      clearTimeout(timeoutId)
+    }
+  }
 }
 
 function normalizeFieldValue(value: unknown): InquiryFieldValue | undefined {
@@ -152,13 +171,17 @@ export async function POST(request: Request) {
       </div>
     `
 
-    await sendInquiryEmail({
-      to: getInquiryRecipientEmail(),
-      subject,
-      text: textLines.join('\n'),
-      html,
-      replyTo: payload.contactEmail || undefined,
-    })
+    await withTimeout(
+      sendInquiryEmail({
+        to: getInquiryRecipientEmail(),
+        subject,
+        text: textLines.join('\n'),
+        html,
+        replyTo: payload.contactEmail || undefined,
+      }),
+      INQUIRY_EMAIL_TIMEOUT_MS,
+      'The email service took too long to respond. Please try again in a moment.'
+    )
 
     return NextResponse.json({ message: 'Your request has been sent successfully.' })
   } catch (error) {

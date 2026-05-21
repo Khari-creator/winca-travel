@@ -8,7 +8,7 @@ import {
   Instagram,
 } from 'lucide-react'
 
-import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO } from '@/lib/company'
+import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO, CONTACT_PHONE, CONTACT_PHONE_TEL } from '@/lib/company'
 
 export default function TopNavbar() {
   return (
@@ -29,13 +29,13 @@ export default function TopNavbar() {
           </a>
 
           <a
-            href="tel:+254114274647"
+            href={CONTACT_PHONE_TEL}
             className="flex items-center gap-2 hover:text-accent transition-colors"
             aria-label="Call us"
           >
             <Phone size={14} />
             <span className="whitespace-nowrap">
-              +254 743 095 927
+              {CONTACT_PHONE}
             </span>
           </a>
         </div>

@@ -13,6 +13,9 @@ type MailConfig = {
 
 let cachedTransporter: Transporter | null = null
 let cachedTransporterKey = ''
+const SMTP_CONNECTION_TIMEOUT_MS = 10000
+const SMTP_GREETING_TIMEOUT_MS = 10000
+const SMTP_SOCKET_TIMEOUT_MS = 15000
 
 function getMailConfig(): MailConfig | null {
   const host = process.env.SMTP_HOST
@@ -50,6 +53,9 @@ function getTransporter(config: MailConfig) {
       host: config.host,
       port: config.port,
       secure: config.secure,
+      connectionTimeout: SMTP_CONNECTION_TIMEOUT_MS,
+      greetingTimeout: SMTP_GREETING_TIMEOUT_MS,
+      socketTimeout: SMTP_SOCKET_TIMEOUT_MS,
       auth: {
         user: config.user,
         pass: config.pass,

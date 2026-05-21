@@ -1,5 +1,5 @@
 import ContactForm from './ContactForm'
-import { CONTACT_EMAIL } from '@/lib/company'
+import { CONTACT_EMAIL, CONTACT_PHONE } from '@/lib/company'
 
 export default function ContactPage() {
   return (
@@ -26,7 +26,7 @@ export default function ContactPage() {
 
             <div className="space-y-4 text-gray-700">
               <p>
-                <span className="font-semibold text-gray-900">Phone:</span> +254 743095927
+                <span className="font-semibold text-gray-900">Phone:</span> {CONTACT_PHONE}
               </p>
               <p>
                 <span className="font-semibold text-gray-900">Email:</span> {CONTACT_EMAIL}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { CONTACT_PHONE } from '@/lib/company'
 import ECitizenApplicationForm from './ECitizenApplicationForm'
 
 const services = [
@@ -272,7 +273,7 @@ export default function ECitizenPage() {
 
             <div className="space-y-3 text-gray-700">
               <div className="rounded-lg border px-4 py-3">Office: Nairobi, Kenya</div>
-              <div className="rounded-lg border px-4 py-3">Contact: +254 114 274647</div>
+              <div className="rounded-lg border px-4 py-3">Contact: {CONTACT_PHONE}</div>
               <div className="rounded-lg border px-4 py-3">Business Registration: Available on request</div>
               <div className="rounded-lg border px-4 py-3">Experience: 5+ years facilitation support</div>
               <div className="rounded-lg border px-4 py-3">Client feedback: Verified testimonials available</div>

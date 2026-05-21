@@ -7,6 +7,7 @@ import { CalendarDays, Globe, Mail, Phone, Send, User } from 'lucide-react'
 
 import InquiryFeedback from '@/components/forms/InquiryFeedback'
 import { useInquirySubmission } from '@/components/forms/useInquirySubmission'
+import { CONTACT_PHONE } from '@/lib/company'
 
 type VisaFormData = {
   destination: string
@@ -263,7 +264,7 @@ function VisaInquiryForm() {
             <input
               type="tel"
               name="phone"
-              placeholder="+254 7XX XXX XXX"
+              placeholder={CONTACT_PHONE}
               value={form.phone}
               onChange={handleChange}
               required

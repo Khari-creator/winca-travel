@@ -10,7 +10,7 @@ import {
   Instagram,
 } from "lucide-react"
 
-import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO } from '@/lib/company'
+import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO, CONTACT_PHONE, CONTACT_PHONE_TEL } from '@/lib/company'
 
 export default function Footer() {
   return (
@@ -136,8 +136,8 @@ export default function Footer() {
 
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-red-500" />
-                <a href="tel:+254114274647" className="hover:text-red-500 transition">
-                +254 114 274647
+                <a href={CONTACT_PHONE_TEL} className="hover:text-red-500 transition">
+                {CONTACT_PHONE}
                 </a>
               </li>
 
